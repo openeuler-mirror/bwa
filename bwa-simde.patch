@@ -1,0 +1,16 @@
+diff --git a/ksw.c b/ksw.c
+index 9793e5eb..76f39c98 100644
+--- a/ksw.c
++++ b/ksw.c
+@@ -26,7 +26,11 @@
+ #include <stdlib.h>
+ #include <stdint.h>
+ #include <assert.h>
++#ifdef USE_SIMDE
++#include <simde/x86/sse2.h>
++#else
+ #include <emmintrin.h>
++#endif
+ #include "ksw.h"
+ 
+ #ifdef USE_MALLOC_WRAPPERS
