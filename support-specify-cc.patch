@@ -1,0 +1,9 @@
+diff -up bwa-0.7.17/Makefile.orig bwa-0.7.17/Makefile
+--- bwa-0.7.17/Makefile.orig	2023-04-06 19:24:32.579161702 +0800
++++ bwa-0.7.17/Makefile	2023-04-06 19:24:38.379192544 +0800
+@@ -1,4 +1,4 @@
+-CC=			gcc
++CC?=			gcc
+ #CC=			clang --analyze
+ CFLAGS=		-g -Wall -Wno-unused-function -O2
+ WRAP_MALLOC=-DUSE_MALLOC_WRAPPERS

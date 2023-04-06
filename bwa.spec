@@ -1,13 +1,15 @@
 Name:                bwa
 Version:             0.7.17
-Release:             1
+Release:             2
 Summary:             Burrows-Wheeler Alignment tool
 License:             GPLv3 and MIT
 URL:                 https://github.com/lh3/bwa
 Source0:             https://github.com/lh3/bwa/releases/download/v%{version}/%{name}-%{version}.tar.bz2
 Patch0:              bwa-fix-build-gcc10.patch
 Patch1:              bwa-simde.patch
+Patch2:              support-specify-cc.patch
 BuildRequires:       gcc perl-generators
+BuildRequires:       clang
 %ifnarch x86_64
 BuildRequires:       simde-devel
 %endif
@@ -51,5 +53,8 @@ install -m 0644 bwa.1 %{buildroot}/%{_mandir}/man1/bwa.1
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Fri Apr 14 2023 jammyjellyfish <jammyjellyfish255@outlook.com> - 0.7.17-2
+- Support specify CC
+
 * Fri Jan 8 2021 chengzihan <chengzihan2@huawei.com> - 0.7.17-1
 - Package init
